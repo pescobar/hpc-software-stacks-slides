@@ -25,7 +25,7 @@ sciCORE
 - All users of HPC environments were tech-savvy 
 <br>
 <br>
-- In many cases the the user running the software was also the developer
+- In many cases the the user running the software was also a developer
 <br>
 <br>
 - Each user would take care of building their software from source
@@ -145,9 +145,30 @@ Also the same work done again and again in each HPC cluster
 ]
 ---
 
+## Also some other tools became popular
+
+.center[
+![:scale 30%](img/conda_logo.svg)
+]
+.center[
+[https://docs.conda.io/](https://docs.conda.io/)
+]
+<br>
+.center[
+![:scale 20%](img/apptainer.png)
+]
+.center[
+[Apptainer (Singularity)](https://apptainer.org/)
+]
+<br>
+<br>
+
+
+---
+
 # Future of scientific software stack
 
-- Tools like EasyBuild and Spack simplied the management of the software stack BUT...
+- Tools like EasyBuild and Spack simplied the management of the central software stack BUT...
 
     - You still need to rebuild the software for every new system (stack depends on the base OS)
     <br><br>
@@ -208,6 +229,8 @@ Also the same work done again and again in each HPC cluster
  - We would still maintain our "private" software stack for those tools not provided by EESSI or ComputeCanada
  <br><br>
  - We would be able to use the same software stack across all our systems (regular cluster, scicoremed, desktop machines or any of our servers)
+ <br><br>
+ - You can also use Conda or Apptainer (Singularity) 
 
 ---
 
