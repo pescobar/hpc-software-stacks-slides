@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Software stacks for HPC systems</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+  </head>
+  <body>
+  <textarea id="source">
+
+class: center, middle
+
+# Software stack on HPC systems 
+# Past, present and future
+
+Pablo Escobar Lopez
+
+sciCORE
+
+---
+
+# A long time ago in a galaxy far, far away...
+
+<br>
+- All users of HPC environments were tech-savvy 
+<br>
+<br>
+- In many cases the the user running the software was also the developer
+<br>
+<br>
+- Each user would take care of building their software from source
+<br>
+<br>
+- After building an application the users would take care of setting up the environment (e.g. using ~/.bashrc)
+<br>
+<br>
+  - PATH
+  - LD_LIBRARY_PATH
+  - etc...
+
+---
+
+# Then more and more users started using HPC clusters and ...
+
+- Building from source was not that easy for new users
+<br>
+<br>
+- Manually setting up the required environment variables was complex and error-prone
+<br>
+<br>
+- An application installed in a user's home folder was not accessible for other users in the cluster
+
+---
+
+# SysAdmins started to provide a central software stack in the cluster
+
+<br>
+<br>
+- Sysadmins would manually build the application to a shared folder in the cluster
+<br>
+<br>
+  - ./configure && make && make install 
+<br>
+<br>
+<br>
+<br>
+- Sysadmins would manually create "modules" to help users define the enviroment variables in a controlled way
+
+---
+
+## Maintaining a central software stack became more and more complex for sysadmins
+
+  - A lot of manual and repetitive work building the applications and creating the modules "manually"
+<br>
+<br>
+  - Researchers focus on the science behind the software they implement, and care little about tools, build procedure, portability..etc so many installations would require a lot of effort
+<br>
+<br>
+  - Software installations were hard to reproduce
+<br>
+<br>
+  - So Sysadmins started to create their own build scripts...
+
+---
+
+## But custom build scripts was not a perfect solution
+   
+   .center[![:scale 40%](img/geek-and-poke-invaluable.png)]
+
+.center[
+.small[
+Also the same work done again and again in each HPC cluster
+]
+]
+
+---
+
+## Then the first build automation tools appeared
+
+.center[
+![:scale 30%](img/easybuild_logo_alpha.webp)
+]
+.center[
+[https://easybuild.io/](https://easybuild.io/)
+]
+<br>
+.center[
+![:scale 30%](img/spack-logo.svg)
+]
+.center[
+[https://spack.io/](https://spack.io/)
+]
+<br>
+<br>
+---
+
+
+.center[
+## Easybuild features...
+]
+
+.small[
+
+- fully autonomously building and installing (scientific) software
+
+- automatic dependency resolution
+
+- automatic generation of module files (Tcl or Lua syntax)
+
+- thorough logging of executed build/install procedure
+
+- archiving of build specifications (‘easyconfig files‘)
+
+- highly configurable, via config files/environment/command line
+
+- dynamically extendable with additional easyblocks, toolchains, etc.
+
+- support for custom module naming schemes (incl. hierarchical)
+
+- comprehensively tested: lots of unit tests, regression testing, . . .
+
+- actively developed, collaboration between various HPC sites
+
+- worldwide community
+]
+---
+
+# Future of scientific software stack
+
+- Tools like EasyBuild and Spack simplied the management of the software stack BUT...
+
+    - You still need to rebuild the software for every new system (stack depends on the base OS)
+    <br><br>
+    - Not trivial to use the same software stack in other systems
+      - Other HPC clusters
+      - Cloud machines
+      - Desktop computers
+    <br><br>
+    - New projects appeared to solve these problems...
+
+
+---
+
+# Future of scientific software stack: ComputeCanada and EESSI
+
+.center[
+![:scale 50%](img/layers.jpg)
+]
+.center[
+[https://www.eessi-hpc.org](https://www.eessi-hpc.org/software-layer/)
+<br><br>
+[https://docs.alliancecan.ca/wiki/Available_software](https://docs.alliancecan.ca/wiki/Available_software)
+]
+
+
+---
+
+# Future of scientific software stack: ComputeCanada and EESSI
+
+.center[
+![:scale 80%](img/vernvm-fs-layer.png)
+]
+
+
+---
+
+# Future of scientific software stack: ComputeCanada and EESSI
+
+# 
+.center[
+![:scale 80%](img/compatibility-layer.png)
+]
+
+---
+
+# Future of scientific software stack: ComputeCanada and EESSI
+
+.center[
+![:scale 90%](img/software-layer-exp.png)
+]
+
+---
+
+# Future at sciCORE
+
+ - We are discussing about using making ComputeCanada and EESSI accessible in sciCORE
+ <br><br>
+ - We would still maintain our "private" software stack for those tools not provided by EESSI or ComputeCanada
+ <br><br>
+ - We would be able to use the same software stack across all our systems (regular cluster, scicoremed, desktop machines or any of our servers)
+
+---
+
+.center[
+![:scale 100%](img/end.gif)
+]
+
+
+
+  </textarea>
+  <script src="js/vendor/remark.min.js"></script>
+  <script src="js/vendor/jquery-3.2.1.min.js"></script>
+  <script src="js/terminal.language.js"></script>
+  <script src="js/common.js"></script>
+  </body>
+</html>
+
+# vim: filetype=markdown syntax=markdown tabstop=2 shiftwidth=2 expandtab
