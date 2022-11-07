@@ -59,7 +59,7 @@ sciCORE
 - Sysadmins would manually build the application to a shared folder in the cluster
 <br>
 <br>
-  - ./configure && make && make install 
+  - ./configure --prefix=/soft && make && make install 
 <br>
 <br>
 <br>
@@ -224,13 +224,13 @@ Also the same work done again and again in each HPC cluster
 
 # Future at sciCORE
 
- - We are discussing about using making ComputeCanada and EESSI accessible in sciCORE
+ - We are discussing about making ComputeCanada and EESSI accessible in sciCORE
  <br><br>
- - We would still maintain our "private" software stack for those tools not provided by EESSI or ComputeCanada
+ - We would still maintain our "private" software stack for those tools not provided by EESSI or ComputeCanada but its size and maintance overhead should reduce.
  <br><br>
  - We would be able to use the same software stack across all our systems (regular cluster, scicoremed, desktop machines or any of our servers)
  <br><br>
- - You can also use Conda or Apptainer (Singularity) 
+ - Cluster users can still use Conda or Apptainer (Singularity)
 
 ---
 
