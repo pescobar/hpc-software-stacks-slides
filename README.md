@@ -1,1 +1,1 @@
-[github pages](https://pescobar.github.io/slurm-cloud-scheduling-slides/)
+[github pages](https://pescobar.github.io/hpc-software-stacks-slides/)
